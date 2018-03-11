@@ -2,11 +2,72 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>Employee Directory</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Employee Directory</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="employees.css" rel="stylesheet" />
-</head>
-<body>
 
+	<script src="./js/vue.js"></script>
+	<script type="text/javascript">
+		function loadData() {
+			var data_file = "./employees.json";
+			var http_request = new XMLHttpRequest();
+
+			http_request.onreadystatechange = function () {
+				if (http_request.readyState == 4) {
+					var json_data = JSON.parse(http_request.responseText);
+					var employees = new Vue({
+						el: '#employees',
+						data: json_data
+					});
+				}
+			}
+
+			http_request.open("GET", data_file, true);
+			http_request.send();
+		}
+	</script>
+</head>
+<body onload="loadData()">
+	<div class="title">Employee Directory</div>
+	<div id="employees">
+		<div class="employees container d-none d-md-block">
+			<table class="table table-hover">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">ID#</th>
+						<th scope="col">Name</th>
+						<th scope="col">Address</th>
+						<th scope="col">Extension</th>
+						<th scope="col">Picture</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(employee, index) in employees" :id="'employee'+index">
+						<th scope="row">{{ employee.employeeid }}</th>
+						<td>{{ employee.firstname }} {{ employee.lastname }}</td>
+						<td>{{ employee.address.street_address }}<br />{{ employee.address.city }}, {{ employee.address.state }} {{ employee.address.zip }}</td>
+						<td>{{ employee.extension }}</td>
+						<td><img :src="'./employeepictures/'+employee.picture" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="carddisplay container-fluid d-sm-block d-md-none">
+			<div v-for="(employee, index) in employees" :id="'employee'+index" class="employeesmobile">
+				<div class="employeeinfo">
+					<div><b>{{ employee.employeeid }}</b></div>
+					<div class="employeenameaddressmobile">{{ employee.firstname }} {{ employee.lastname }}<br />{{ employee.address.street_address }}<br />{{ employee.address.city }}, {{ employee.address.state }} {{ employee.address.zip }}</div>
+					<div>Ext: {{ employee.extension }}</div>
+				</div>
+				<img :src="'./employeepictures/'+employee.picture" />
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

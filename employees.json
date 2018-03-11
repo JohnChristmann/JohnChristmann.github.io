@@ -1,0 +1,136 @@
+{
+	"id": "http://JohnChristmann.github.io/employees.json",
+
+	"employees": [
+		{
+			"employeeid": 1,
+			"firstname": "John",
+			"lastname": "Smith",
+			"extension": 1234,
+			"picture": "JohnSmith.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 2,
+			"firstname": "Jane",
+			"lastname": "Doe",
+			"extension": 1235,
+			"picture": "JaneDoe.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 3,
+			"firstname": "Jack",
+			"lastname": "Daniels",
+			"extension": 1236,
+			"picture": "JackDaniels.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 4,
+			"firstname": "Robert",
+			"lastname": "Jones",
+			"extension": 1237,
+			"picture": "RobertJones.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 5,
+			"firstname": "Paul",
+			"lastname": "Paulson",
+			"extension": 1238,
+			"picture": "PaulPaulson.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 6,
+			"firstname": "Mary",
+			"lastname": "Hill",
+			"extension": 1239,
+			"picture": "MaryHill.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 7,
+			"firstname": "Fred",
+			"lastname": "Black",
+			"extension": 1240,
+			"picture": "FredBlack.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 8,
+			"firstname": "Claire",
+			"lastname": "Miller",
+			"extension": 1241,
+			"picture": "ClaireMiller.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 9,
+			"firstname": "Gerald",
+			"lastname": "Marshall",
+			"extension": 1242,
+			"picture": "GeraldMarshall.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		},
+		{
+			"employeeid": 10,
+			"firstname": "James",
+			"lastname": "Jameson",
+			"extension": 1243,
+			"picture": "JamesJameson.jpg",
+			"address": {
+				"street_address": "1234 NE Main St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": 12345
+			}
+		}
+	]
+}
