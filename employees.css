@@ -16,6 +16,11 @@
     line-height:18px;
 }
 
+.card-body {
+    padding: 0.5rem 0.5rem;
+    font-size-adjust: 0.45;
+}
+
 @media screen and (max-width: 767px) {
     .title{
         padding:12px;

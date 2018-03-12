@@ -7,10 +7,47 @@
 	<title>Hawaii Emergency Response Dashboard</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="./dashboard.css" rel="stylesheet" />
-
-	<script src="./js/vue.js"></script>
 </head>
 <body>
+	<div class="modal fade" id="drillconfirm" tabindex="-1" role="dialog" aria-labelledby="drilllabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="drilllabel"><strong>ISSUE DRILL</strong></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Please confirm issuing an emergency alert drill.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+					<button type="button" class="btn btn-warning" data-dismiss="modal">ISSUE ALERT</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="alertconfirm" tabindex="-1" role="dialog" aria-labelledby="alertlabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="alertlabel"><strong>ISSUE ALERT</strong></h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					Please confirm issuing an emergency alert.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">ISSUE DRILL</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<nav class="navbar navbar-dark bg-dark sticky-top flex-md-nowrap">
 		<a class="navbar-brand" href="#">Hawaii Emergency Response System</a>
 		<a class="nav-link" href="#">Log Out</a>
@@ -18,7 +55,162 @@
 
 	<div class="container-fluid">
 		<div class="row">
-
+			<nav class="bg-light sidebar col-auto">
+				<ul class="nav d-flex flex-column">
+					<li class="nav-item">
+						<a class="nav-link" href="#dashboard" data-toggle="collapse" aria-expanded="true" aria-controls="dashboard">Dashboard</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="#drill" data-toggle="collapse" aria-expanded="false" aria-controls="drill">Drill Control</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="#alert" style="color:red;" data-toggle="collapse" aria-expanded="false" aria-controls="alert">Alert Control</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link collapsed" href="#logs" data-toggle="collapse" aria-expanded="false" aria-controls="logs">Logs</a>
+					</li>
+				</ul>
+			</nav>
+			<div id="panels" class="col p-0">
+				<div class="card border-secondary">
+					<div id="dashboard" class="collapse show dashboard" data-parent="#panels">
+						<div class="card-header">
+							<h4>Dashboard</h4>
+						</div>
+						<div class="card-body">
+							<div class="d-flex flex-row flex-wrap justify-content-between">
+								<table id="statustable" class="table table-hover table-responsive">
+									<thead class="table-light">
+										<tr>
+											<th scope="col">Monitoring Station</th>
+											<th scope="col">Status</th>
+											<th scope="col">Threats Detected</th>
+										</tr>
+									</thead>
+									<tr>
+										<td scope="row">1</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">2</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">3</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">4</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">5</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">6</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">7</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+									<tr>
+										<td scope="row">8</td>
+										<td>Online</td>
+										<td>None</td>
+									</tr>
+								</table>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2703194.906626839!2d-157.56233864136328!3d20.657541393590304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1520877693631" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card border-warning">
+					<div id="drill" class="collapse drillcontrol" data-parent="#panels">
+						<div class="card-header">
+							<h4>Drill Control</h4>
+						</div>
+						<div class="card-body">
+							Warning: Only issue drills when directed.<br />
+							<button class="btn btn-warning" data-toggle="modal" data-target="#drillconfirm">Issue Drill</button>
+						</div>
+					</div>
+				</div>
+				<div class="card border-danger">
+					<div id="alert" class="collapse alertcontrol" data-parent="#panels">
+						<div class="card-header">
+							<h4>Alert Control</h4>
+						</div>
+						<div class="card-body">
+							Warning: Only issue alerts when a threat is detected.<br />
+							<button class="btn btn-danger" data-toggle="modal" data-target="#alertconfirm">Issue Alert</button>
+						</div>
+					</div>
+				</div>
+				<div class="card border-info">
+					<div id="logs" class="collapse logs" data-parent="#panels">
+						<div class="card-header">
+							<h4>Logs</h4>
+						</div>
+						<div class="card-body">
+							<table class="table table-hover">
+								<thead class="table-light">
+									<tr>
+										<th scope="col">Event ID</th>
+										<th scope="col">Start Time</th>
+										<th scope="col">End Time</th>
+										<th scope="col">Event</th>
+									</tr>
+								</thead>
+								<tr>
+									<td scope="row">1</td>
+									<td>2/1/2018 14:01</td>
+									<td>2/1/2018 14:06</td>
+									<td>Drill</td>
+								</tr>
+								<tr>
+									<td scope="row">2</td>
+									<td>2/2/2018 14:01</td>
+									<td>2/2/2018 14:06</td>
+									<td>Drill</td>
+								</tr>
+								<tr>
+									<td scope="row">3</td>
+									<td>2/3/2018 00:00</td>
+									<td>2/3/2018 00:05</td>
+									<td>System Test OK</td>
+								</tr>
+								<tr>
+									<td scope="row">4</td>
+									<td>2/3/2018 14:01</td>
+									<td>2/3/2018 14:06</td>
+									<td>Drill</td>
+								</tr>
+								<tr>
+									<td scope="row">5</td>
+									<td>2/4/2018 14:01</td>
+									<td>2/4/2018 14:06</td>
+									<td>Drill</td>
+								</tr>
+								<tr>
+									<td scope="row">6</td>
+									<td>2/5/2018 12:36</td>
+									<td>2/5/2018 12:46</td>
+									<td><strong>Alert</strong></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

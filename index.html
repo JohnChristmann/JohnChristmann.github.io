@@ -2,11 +2,58 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>Programming test</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Programming test</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-	<a href="dashboard.html">Hawaii emergency response dashboard</a><br />
-	<a href="employees.html">Employee directory</a>
+	<div class="d-flex flex-row flex-wrap">
+		<card class="card m-1">
+			<div class="card-header">
+				<h5>Hawaii Emergency Dashboard</h5>
+			</div>
+			<div class="card-body">
+				<a href="dashboard.html">Hawaii emergency response dashboard</a><br />
+			</div>
+		</card>
+		<card class="card m-1">
+			<div class="card-header">
+				<h5>Swimming Schedule</h5>
+			</div>
+			<div class="card-body">
+				<code>
+					for each day 1 -> 365<br />
+					&nbsp;if day % 50 = 0<br />
+					&nbsp;&nbsp;output John + Jack<br />
+					&nbsp;else if day % 3 = 0<br />
+					&nbsp;&nbsp;output Jack<br />
+					&nbsp;else<br />
+					&nbsp;&nbsp;output John<br />
+					<br />
+					Offset version<br />
+					for each day 1 -> 365<br />
+					&nbsp;if (day - offset) % 50 = 0<br />
+					&nbsp;&nbsp;output John + Jack<br />
+					&nbsp;else if (day - offset) % 3 = 0<br />
+					&nbsp;&nbsp;output Jack<br />
+					&nbsp;else<br />
+					&nbsp;&nbsp;output John<br />
+				</code>
+			</div>
+		</card>
+		<card class="card m-1">
+			<div class="card-header">
+				<h5>Employee Directory</h5>
+			</div>
+			<div class="card-body">
+				<a href="employees.html">Employee directory</a>
+			</div>
+		</card>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
