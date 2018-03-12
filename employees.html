@@ -30,7 +30,7 @@
 	</script>
 </head>
 <body onload="loadData()">
-	<div class="title">Employee Directory</div>
+	<h3 class="title">Employee Directory</h3>
 	<div id="employees">
 		<div class="employees container d-none d-md-block">
 			<table class="table table-hover">
@@ -44,7 +44,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="(employee, index) in employees" :id="'employee'+index">
+					<tr v-for="(employee, index) in employees" v-cloak="true" :id="'employee'+index">
 						<th scope="row">{{ employee.employeeid }}</th>
 						<td>{{ employee.firstname }} {{ employee.lastname }}</td>
 						<td>{{ employee.address.street_address }}<br />{{ employee.address.city }}, {{ employee.address.state }} {{ employee.address.zip }}</td>
@@ -54,14 +54,14 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="carddisplay container-fluid d-sm-block d-md-none">
-			<div v-for="(employee, index) in employees" :id="'employee'+index" class="employeesmobile">
-				<div class="employeeinfo">
-					<div><b>{{ employee.employeeid }}</b></div>
-					<div class="employeenameaddressmobile">{{ employee.firstname }} {{ employee.lastname }}<br />{{ employee.address.street_address }}<br />{{ employee.address.city }}, {{ employee.address.state }} {{ employee.address.zip }}</div>
+		<div class="container-fluid d-sm-block d-md-none d-flex flex-wrap">
+			<div v-for="(employee, index) in employees" v-cloak="true" :id="'employee'+index" class="employeesmobile card">
+				<img :src="'./employeepictures/'+employee.picture" class="card-image-top" />
+				<div class="card-body d-flex flex-column justify-content-between">
+					<h6 class="card-title">{{ employee.firstname }} {{ employee.lastname }}</h6>
+					<div class="employeeaddress cardtext">{{ employee.address.street_address }}<br />{{ employee.address.city }}, {{ employee.address.state }} {{ employee.address.zip }}</div>
 					<div>Ext: {{ employee.extension }}</div>
 				</div>
-				<img :src="'./employeepictures/'+employee.picture" />
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,16 @@
+for each day 1 -> 365
+	if day % 50 = 0
+		output John + Jack
+	else if day % 3 = 0
+		output Jack
+	else
+		output John
+
+Offset version
+for each day 1 -> 365
+	if (day - offset) % 50 = 0
+		output John + Jack
+	else if (day - offset) % 3 = 0
+		output Jack
+	else
+		output John

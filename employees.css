@@ -1,11 +1,5 @@
-﻿body {
-    
-}
-
-.title{
+﻿.title{
     text-align:center;
-    text-size-adjust:200%;
-    font:bold 24px calibri;
     padding:24px;
 }
 
@@ -13,33 +7,21 @@
     max-width:1024px;
 }
 
-.carddisplay {
-    justify-content:center;
-}
-
 .employeesmobile {
-    border: 2px solid black;
-    max-width: 400px;
-    padding: 4px;
-    height: 166px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 4px;
+    width:150px;
+    margin: 8px auto;
 }
 
-.employeeinfo {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-}
-
-.employeenameaddressmobile{
-    font:normal 14px arial, verdana;
+.employeeaddress{
+    line-height:18px;
 }
 
 @media screen and (max-width: 767px) {
     .title{
         padding:12px;
     }
+}
+
+[v-cloak]{
+    display: none;
 }
