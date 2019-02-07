@@ -1,3 +1,13 @@
-﻿body
-{
+﻿.card-body {
+    padding: 0.5rem 0.5rem;
+    font-size-adjust: 0.45;
+    line-height: 20px;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.homecard {
+    margin: 8px auto;
 }
