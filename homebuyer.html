@@ -11,12 +11,12 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body onload="init()">
-	<nav class="navbar navbar-light bg-light sticky-top flex-md-nowrap">
+	<nav class="navbar navbar-light bg-light sticky-top flex-nowrap">
 		<a class="navbar-brand" href="#">Portland Home Buyer's Guide</a>
 	</nav>
 
-	<div id="homes" class="container-fluid d-flex flex-row">
-		<div id="filters" class="bg-light sidebar d-flex flex-column" width="auto">
+	<div id="homes" class="container-fluid d-flex flex-row p-0">
+		<div id="filters" class="bg-light sidebar d-flex flex-column px-3">
 			<label for="bedroomsFilter" id="bedroomsFilterLabel" v-cloak="true">Bedrooms: {{ bedrooms[0] }} - {{ bedrooms[1] }}</label>
 			<input id="bedroomsFilter" data-slider-id="bedroomsFilterSlider" type="text" value="" />
 			<label for="sizeFilter" id="sizeFilterLabel" v-cloak="true">Size (sqft): {{ size[0] }} - {{ size[1] }}</label>
@@ -25,14 +25,12 @@
 			<input id="priceFilter" data-slider-id="priceFilterSlider" type="text" value="" />
 			<label v-cloak="true">{{ filteredhomes.length }} out of {{ database.homes.length }} listings match the current filter</label>
 		</div>
-		<div class="container">
-			<div class="container-fluid d-flex flex-row flex-wrap">
-				<div v-for="(home, index) in filteredhomes" v-cloak="true" :id="'home'+index" class="card homecard">
-					<img :src="'./homepictures/'+home.picture" class="card-header" />
-					<div class="card-body d-flex flex-column justify-content-between">
-						<h5 class="homeaddress card-title">{{ home.address.street }}<br />{{ home.address.city }}, {{ home.address.state }} {{ home.address.zip }}</h5>
-						<div class="homeinfo cardtext">Bedrooms: {{ home.bedrooms }}<br />Bathrooms: {{ home.bathrooms }}<br />Size: {{ home.size }}sqft<br />Price: ${{ home.price | money }}</div>
-					</div>
+		<div class="container-fluid d-flex flex-row flex-wrap flex-grow-1">
+			<div v-for="(home, index) in filteredhomes" v-cloak="true" :id="'home'+index" class="card homecard">
+				<img :src="'./homepictures/'+home.picture" class="card-header" />
+				<div class="card-body d-flex flex-column justify-content-between">
+					<h5 class="homeaddress card-title">{{ home.address.street }}<br />{{ home.address.city }}, {{ home.address.state }} {{ home.address.zip }}</h5>
+					<div class="homeinfo cardtext">Bedrooms: {{ home.bedrooms }}<br />Bathrooms: {{ home.bathrooms }}<br />Size: {{ home.size }}sqft<br />Price: ${{ home.price | money }}</div>
 				</div>
 			</div>
 		</div>

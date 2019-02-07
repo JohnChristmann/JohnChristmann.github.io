@@ -11,3 +11,7 @@
 .homecard {
     margin: 8px auto;
 }
+
+#filters {
+    width: 250px;
+}
