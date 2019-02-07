@@ -1,0 +1,146 @@
+{
+	"id": "http://JohnChristmann.github.io/employees.json",
+
+	"homes": [
+		{
+			"homeid": 1,
+			"address": {
+				"street": "123 SE Park Lane",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97214"
+			},
+			"bedrooms": 2,
+			"bathrooms": 1,
+			"size": 800,
+			"price": 200000,
+			"picture": "home1.jpg"
+		},
+		{
+			"homeid": 2,
+			"address": {
+				"street": "524 SE Madison Ave",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97214"
+			},
+			"bedrooms": 2,
+			"bathrooms": 1,
+			"size": 900,
+			"price": 220000,
+			"picture": "home2.jpg"
+		},
+		{
+			"homeid": 3,
+			"address": {
+				"street": "1202 SW Beaver Way",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97239"
+			},
+			"bedrooms": 3,
+			"bathrooms": 2,
+			"size": 1200,
+			"price": 350000,
+			"picture": "home3.jpg"
+		},
+		{
+			"homeid": 4,
+			"address": {
+				"street": "214 SE Park Lane",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97214"
+			},
+			"bedrooms": 2,
+			"bathrooms": 2,
+			"size": 950,
+			"price": 230000,
+			"picture": "home4.jpg"
+		},
+		{
+			"homeid": 5,
+			"address": {
+				"street": "576 NE Adams Ave",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97232"
+			},
+			"bedrooms": 2,
+			"bathrooms": 1,
+			"size": 750,
+			"price": 190000,
+			"picture": "home5.jpg"
+		},
+		{
+			"homeid": 6,
+			"address": {
+				"street": "2134 NW Hill St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97210"
+			},
+			"bedrooms": 4,
+			"bathrooms": 3,
+			"size": 1600,
+			"price": 550000,
+			"picture": "home6.jpg"
+		},
+		{
+			"homeid": 7,
+			"address": {
+				"street": "834 SW Beech St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97239"
+			},
+			"bedrooms": 3,
+			"bathrooms": 2,
+			"size": 1100,
+			"price": 330000,
+			"picture": "home7.jpg"
+		},
+		{
+			"homeid": 8,
+			"address": {
+				"street": "5515 SW Willamette Way",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97221"
+			},
+			"bedrooms": 3,
+			"bathrooms": 2,
+			"size": 1150,
+			"price": 340000,
+			"picture": "home8.jpg"
+		},
+		{
+			"homeid": 9,
+			"address": {
+				"street": "7601 NE Plains Ave",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97213"
+			},
+			"bedrooms": 3,
+			"bathrooms": 2,
+			"size": 900,
+			"price": 275000,
+			"picture": "home9.jpg"
+		},
+		{
+			"homeid": 10,
+			"address": {
+				"street": "4124 SE Laurel St",
+				"city": "Portland",
+				"state": "OR",
+				"zip": "97202"
+			},
+			"bedrooms": 2,
+			"bathrooms": 1,
+			"size": 750,
+			"price": 210000,
+			"picture": "home10.jpg"
+		}
+	]
+}
